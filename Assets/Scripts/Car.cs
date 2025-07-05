@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Car : MonoBehaviour
@@ -10,9 +11,15 @@ public class Car : MonoBehaviour
     public GameObject CarOBJ;
     public float moveSpeed = 2f;
     public bool Move = false;
+    public GameObject YouWon;
+    public GameObject YouLose;
+    public GameObject Info;
+
+    public Shop shop;
 
     void Start()
     {
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -44,5 +51,88 @@ public class Car : MonoBehaviour
         Image img = GetComponent<Image>();
         img.enabled = true;
         StartCoroutine(MoveCarToTargets());
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "first")
+        {
+            Debug.Log("First");
+            shop.Coins += 30;
+            shop.UpdateAllTexts(shop.CoinsText, shop.Coins);
+            shop.SetCoins();
+            StartCoroutine(ActivateChildrenTemporarily(collision.gameObject));
+        }
+        else if (collision.tag == "second")
+        {
+            Debug.Log("second");
+            shop.Coins += 60;
+            shop.UpdateAllTexts(shop.CoinsText, shop.Coins);
+            shop.SetCoins();
+            StartCoroutine(ActivateChildrenTemporarily(collision.gameObject));
+        }
+        else if (collision.tag == "third")
+        {
+            Debug.Log("third");
+            shop.Coins += 90;
+            shop.UpdateAllTexts(shop.CoinsText, shop.Coins);
+            shop.SetCoins();
+            StartCoroutine(ActivateChildrenTemporarily(collision.gameObject));
+        }
+        else if (collision.tag == "win")
+        {
+            Debug.Log("You Won");
+            StartCoroutine(ShowWin());
+        }
+        else if (collision.tag == "lose")
+        {
+            Debug.Log("You Lose");
+
+            StartCoroutine(ShowLose());
+        }
+    }
+
+    IEnumerator ActivateChildrenTemporarily(GameObject parent)
+    {
+        yield return new WaitForSeconds(1f);
+        foreach (Transform child in parent.transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        foreach (Transform child in parent.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
+    IEnumerator ShowWin()
+    {
+        YouWon.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Menu");
+    }
+    IEnumerator ShowLose()
+    {
+        YouLose.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void GoHome()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+    public void InfoShow()
+    {
+        if (Info.activeSelf)
+        {
+            Info.gameObject.SetActive(false);
+        }
+        else
+        {
+            Info.gameObject.SetActive(true);
+        }
     }
 }

@@ -13,7 +13,11 @@ public class Menu : MonoBehaviour
     public GameObject ShopPanel;
     void Start()
     {
-        Debug.Log("Clear things");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         if (CurrentMap == 0)
         {
             LogicButtons[1].interactable = false;
@@ -25,12 +29,6 @@ public class Menu : MonoBehaviour
             LogicButtons[0].interactable = false;
             LogicButtons[1].interactable = true;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void MapMethods(string tags)
@@ -84,5 +82,13 @@ public class Menu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Scene1");
+    }
+    public void StartGame2()
+    {
+        SceneManager.LoadScene("Scene2");
+    }
+    public void StartGame3()
+    {
+        SceneManager.LoadScene("Scene3");
     }
 }

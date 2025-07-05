@@ -11,6 +11,7 @@ public class GameLogic : MonoBehaviour
 
     InGame inGame;
 
+
     void Start()
     {
         inGame = FindObjectOfType<InGame>();
@@ -27,7 +28,7 @@ public class GameLogic : MonoBehaviour
         if (RoadState == 1)
         {
             RoadPrefabs[0].gameObject.SetActive(true);
-            CoinsWon = 30;
+            RoadPrefabs[3].gameObject.SetActive(false);
         }
         else if (RoadState == 2)
         {
@@ -36,7 +37,6 @@ public class GameLogic : MonoBehaviour
                 RoadPrefabs[i].gameObject.SetActive(false);
             }
             RoadPrefabs[1].gameObject.SetActive(true);
-            CoinsWon = 60;
         }
         else if (RoadState == 3)
         {
@@ -45,7 +45,6 @@ public class GameLogic : MonoBehaviour
                 RoadPrefabs[i].gameObject.SetActive(false);
             }
             RoadPrefabs[2].gameObject.SetActive(true);
-            CoinsWon = 90;
         }
     }
 
