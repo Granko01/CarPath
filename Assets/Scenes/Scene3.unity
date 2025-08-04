@@ -1498,7 +1498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 15187a4da3a654e9580227de658f97f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e19a92465c5734ca68c6d9cd833e4254, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b28487443b11141ba9be2bb7efaa5949, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f9ba79fb5f4a41629b12dfbcdfd808d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3025,6 +3025,7 @@ GameObject:
   - component: {fileID: 448446942}
   - component: {fileID: 448446944}
   - component: {fileID: 448446943}
+  - component: {fileID: 448446945}
   m_Layer: 5
   m_Name: CointAmount
   m_TagString: Untagged
@@ -3064,7 +3065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.972549, b: 0.9411765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3093,6 +3094,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448446941}
   m_CullTransparentMesh: 1
+--- !u!114 &448446945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448446941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.92156863, g: 0.34509805, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &465249399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3609,7 +3625,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d181d98eae8fb4ebead471cca8a98244, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8bfeaf915f4504a86b7aa9c99a5469f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6086,6 +6102,7 @@ GameObject:
   - component: {fileID: 892600811}
   - component: {fileID: 892600813}
   - component: {fileID: 892600812}
+  - component: {fileID: 892600814}
   m_Layer: 5
   m_Name: CointAmount
   m_TagString: Untagged
@@ -6125,7 +6142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.972549, b: 0.9411765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6154,6 +6171,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892600810}
   m_CullTransparentMesh: 1
+--- !u!114 &892600814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892600810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.92156863, g: 0.34509805, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &893220521
 GameObject:
   m_ObjectHideFlags: 0
@@ -6165,6 +6197,7 @@ GameObject:
   - component: {fileID: 893220522}
   - component: {fileID: 893220524}
   - component: {fileID: 893220523}
+  - component: {fileID: 893220525}
   m_Layer: 5
   m_Name: CointAmount
   m_TagString: Untagged
@@ -6204,7 +6237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.972549, b: 0.9411765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6233,6 +6266,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893220521}
   m_CullTransparentMesh: 1
+--- !u!114 &893220525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893220521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.92156863, g: 0.34509805, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &907502211
 GameObject:
   m_ObjectHideFlags: 0
@@ -9276,7 +9324,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 9.144409, y: -613.0989}
-  m_SizeDelta: {x: 318.5025, y: 116.8715}
+  m_SizeDelta: {x: 318.5025, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1290318529
 MonoBehaviour:
@@ -9354,7 +9402,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 79271cd935b0c43f884c262b02fe5906, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82b994bad9dbf4a7e9192c7ccea1a10d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11628,7 +11676,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 15187a4da3a654e9580227de658f97f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e19a92465c5734ca68c6d9cd833e4254, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13080,7 +13128,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a253fdff58bf4482db52eca581a56fdd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56f1c2ec07edc4734a339d1a69547732, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13797,7 +13845,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 15187a4da3a654e9580227de658f97f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e19a92465c5734ca68c6d9cd833e4254, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15542,10 +15590,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Coins: 10000
+  mapIndex: 0
   CoinsText:
   - {fileID: 2035392504}
   CarSpeed: []
+  RoadTax: []
+  Demolition: {fileID: 0}
   Speedstate: 0
+  TaxState: 0
+  DemolitionInt: 0
+  Maps: []
+  StartBtn: []
+  BuyBtn: []
 --- !u!1 &2097368358
 GameObject:
   m_ObjectHideFlags: 0

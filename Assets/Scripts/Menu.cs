@@ -24,6 +24,11 @@ public class Menu : MonoBehaviour
             LogicButtons[0].interactable = true;
 
         }
+        else if (CurrentMap == 1)
+        {
+             LogicButtons[0].interactable = true;
+            LogicButtons[1].interactable = true;
+        }
         else if (CurrentMap == 2)
         {
             LogicButtons[0].interactable = false;

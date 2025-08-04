@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -8,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Shop : MonoBehaviour
 {
     public int Coins = 1000;
-
+    public int mapIndex = 0;
     public Text[] CoinsText;
 
     private const string CoinsKey = "CoinsKey";
@@ -19,9 +18,15 @@ public class Shop : MonoBehaviour
     public int Speedstate = 0;
     public int TaxState = 0;
     public int DemolitionInt = 0;
+
+    public Button[] Maps;
+    public Button[] StartBtn;
+    public Button[] BuyBtn;
+
     private const string CarStateKey = "Statekey";
     private const string TaxKey = "TaxKey";
     private const string DemolitionKey = "DemoKey";
+    private const string MapsKey = "MapsKey";
 
 
     void Start()
@@ -33,6 +38,10 @@ public class Shop : MonoBehaviour
             GetCar();
             GetTax();
             GetDemo();
+            GetMaps();
+            Debug.Log("map " + mapIndex);
+            UpdateMaps();
+            UpdateButtons();
             for (int i = 0; i <= Speedstate; i++)
             {
                 CarSpeed[i].interactable = true;
@@ -47,7 +56,15 @@ public class Shop : MonoBehaviour
             }
         }
     }
-
+    public void GetMaps()
+    {
+        mapIndex = PlayerPrefs.GetInt(MapsKey, mapIndex);
+    }
+    public void SetMap()
+    {
+        PlayerPrefs.SetInt(MapsKey, mapIndex);
+        PlayerPrefs.Save();
+    }
     public void GetCoins()
     {
         Coins = PlayerPrefs.GetInt(CoinsKey, Coins);
@@ -85,13 +102,6 @@ public class Shop : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void UpdateAllTexts(Text[] texts, int value)
-    {
-        foreach (Text t in texts)
-        {
-            t.text = value.ToString();
-        }
-    }
 
     public void Buy(string tags)
     {
@@ -128,5 +138,53 @@ public class Shop : MonoBehaviour
             SetCoins();
             UpdateAllTexts(CoinsText, Coins);
         }
+        if (tags == "SecondMap" && Coins >= 1000)
+        {
+            Coins -= 1000;
+            SetCoins();
+            UpdateAllTexts(CoinsText, Coins);
+            mapIndex++;
+            SetMap();
+        }
+        if (tags == "ThirdMap" && Coins >= 1000)
+        {
+            Coins -= 1000;
+            SetCoins();
+            UpdateAllTexts(CoinsText, Coins);
+            mapIndex++;
+            SetMap();
+        }
+         UpdateMaps();
+        UpdateButtons();
     }
+
+    public void UpdateMaps()
+    {
+        for (int i = 0; i <= mapIndex; i++)
+        {
+            Maps[i].interactable = true;
+        }
+    }
+
+    public void UpdateButtons()
+    {
+        if (mapIndex == 1)
+        {
+            StartBtn[0].interactable = true;
+            BuyBtn[0].interactable = false;
+        }
+        else if (mapIndex == 2)
+        {
+            StartBtn[1].interactable = true;
+            BuyBtn[1].interactable = false;
+        }
+    }
+     public void UpdateAllTexts(Text[] texts, int value)
+    {
+        foreach (Text t in texts)
+        {
+            t.text = value.ToString();
+        }
+    }
+
 }
