@@ -176,7 +176,9 @@ public class Shop : MonoBehaviour
         else if (mapIndex == 2)
         {
             StartBtn[1].interactable = true;
+            StartBtn[0].interactable = true;
             BuyBtn[1].interactable = false;
+            BuyBtn[0].interactable = false;
         }
     }
      public void UpdateAllTexts(Text[] texts, int value)

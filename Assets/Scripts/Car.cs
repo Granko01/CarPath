@@ -17,6 +17,8 @@ public class Car : MonoBehaviour
 
     public Shop shop;
 
+    public Energy energy;
+
     void Start()
     {
         Time.timeScale = 1;
@@ -87,7 +89,7 @@ public class Car : MonoBehaviour
         else if (collision.tag == "lose")
         {
             Debug.Log("You Lose");
-
+            energy.UseEnergy();
             StartCoroutine(ShowLose());
         }
     }
